@@ -32,13 +32,13 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
     </place>
     <place id="p3">
       <name>
-        <text>receiver check availability</text>
+        <text>receiver check first day available</text>
         <graphics>
-          <offset x="460" y="400"/>
+          <offset x="320" y="380"/>
         </graphics>
       </name>
       <graphics>
-        <position x="460" y="360"/>
+        <position x="320" y="340"/>
         <dimension x="40" y="40"/>
       </graphics>
     </place>
@@ -46,11 +46,11 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
       <name>
         <text>carrier check availability</text>
         <graphics>
-          <offset x="670" y="560"/>
+          <offset x="350" y="550"/>
         </graphics>
       </name>
       <graphics>
-        <position x="670" y="520"/>
+        <position x="430" y="510"/>
         <dimension x="40" y="40"/>
       </graphics>
     </place>
@@ -63,6 +63,18 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
       </name>
       <graphics>
         <position x="980" y="230"/>
+        <dimension x="40" y="40"/>
+      </graphics>
+    </place>
+    <place id="p6">
+      <name>
+        <text>receiver checks availability for the new date</text>
+        <graphics>
+          <offset x="700" y="410"/>
+        </graphics>
+      </name>
+      <graphics>
+        <position x="700" y="370"/>
         <dimension x="40" y="40"/>
       </graphics>
     </place>
@@ -87,11 +99,11 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
       <name>
         <text>receiver absent</text>
         <graphics>
-          <offset x="300" y="400"/>
+          <offset x="240" y="400"/>
         </graphics>
       </name>
       <graphics>
-        <position x="300" y="360"/>
+        <position x="240" y="360"/>
         <dimension x="40" y="40"/>
       </graphics>
       <toolspecific tool="WoPeD" version="1.0">
@@ -104,11 +116,11 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
       <name>
         <text>carrier propose new date</text>
         <graphics>
-          <offset x="480" y="570"/>
+          <offset x="700" y="490"/>
         </graphics>
       </name>
       <graphics>
-        <position x="480" y="530"/>
+        <position x="700" y="450"/>
         <dimension x="40" y="40"/>
       </graphics>
       <toolspecific tool="WoPeD" version="1.0">
@@ -168,15 +180,15 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
         <orientation>1</orientation>
       </toolspecific>
     </transition>
-    <transition id="t3">
+    <transition id="t2">
       <name>
-        <text>receiver propose new date</text>
+        <text>receiver propose first day available</text>
         <graphics>
-          <offset x="650" y="400"/>
+          <offset x="440" y="360"/>
         </graphics>
       </name>
       <graphics>
-        <position x="650" y="360"/>
+        <position x="440" y="320"/>
         <dimension x="40" y="40"/>
       </graphics>
       <toolspecific tool="WoPeD" version="1.0">
@@ -185,7 +197,38 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
         <orientation>1</orientation>
       </toolspecific>
     </transition>
-    <arc id="a10" source="t6" target="p3">
+    <transition id="t3">
+      <name>
+        <text>receiver propose new date</text>
+        <graphics>
+          <offset x="540" y="420"/>
+        </graphics>
+      </name>
+      <graphics>
+        <position x="540" y="380"/>
+        <dimension x="40" y="40"/>
+      </graphics>
+      <toolspecific tool="WoPeD" version="1.0">
+        <time>0</time>
+        <timeUnit>1</timeUnit>
+        <orientation>1</orientation>
+      </toolspecific>
+    </transition>
+    <arc id="a11" source="t6" target="p6">
+      <inscription>
+        <text>1</text>
+        <graphics>
+          <offset x="500.0" y="-12.0"/>
+        </graphics>
+      </inscription>
+      <graphics/>
+      <toolspecific tool="WoPeD" version="1.0">
+        <probability>1.0</probability>
+        <displayProbabilityOn>false</displayProbabilityOn>
+        <displayProbabilityPosition x="500.0" y="12.0"/>
+      </toolspecific>
+    </arc>
+    <arc id="a10" source="t2" target="p4">
       <inscription>
         <text>1</text>
         <graphics>
@@ -213,7 +256,7 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
         <displayProbabilityPosition x="500.0" y="12.0"/>
       </toolspecific>
     </arc>
-    <arc id="a12" source="p3" target="t7">
+    <arc id="a12" source="p6" target="t7">
       <inscription>
         <text>1</text>
         <graphics>
@@ -242,6 +285,20 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
       </toolspecific>
     </arc>
     <arc id="a14" source="t8" target="p5">
+      <inscription>
+        <text>1</text>
+        <graphics>
+          <offset x="500.0" y="-12.0"/>
+        </graphics>
+      </inscription>
+      <graphics/>
+      <toolspecific tool="WoPeD" version="1.0">
+        <probability>1.0</probability>
+        <displayProbabilityOn>false</displayProbabilityOn>
+        <displayProbabilityPosition x="500.0" y="12.0"/>
+      </toolspecific>
+    </arc>
+    <arc id="a16" source="p6" target="t3">
       <inscription>
         <text>1</text>
         <graphics>
@@ -339,7 +396,7 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
         <displayProbabilityPosition x="500.0" y="12.0"/>
       </toolspecific>
     </arc>
-    <arc id="a7" source="p3" target="t3">
+    <arc id="a7" source="p3" target="t2">
       <inscription>
         <text>1</text>
         <graphics>
@@ -384,10 +441,10 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
     <toolspecific tool="WoPeD" version="1.0">
       <bounds>
         <position x="2" y="25"/>
-        <dimension x="1082" y="614"/>
+        <dimension x="966" y="650"/>
       </bounds>
       <scale>100</scale>
-      <treeWidthRight>1071</treeWidthRight>
+      <treeWidthRight>955</treeWidthRight>
       <overviewPanelVisible>false</overviewPanelVisible>
       <treeHeightOverview>100</treeHeightOverview>
       <treePanelVisible>false</treePanelVisible>
